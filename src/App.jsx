@@ -360,19 +360,57 @@ export default function App() {
               </div>
 
               <div className="spotlight-right">
-                <div
-                  className="spotlight-art"
-                  style={{
-                    background: `linear-gradient(135deg, ${spotlight.color}, ${spotlight.color}99)`,
-                  }}
-                >
-                  <div className="spotlight-emoji">{spotlight.emoji}</div>
-                </div>
-                <div className="spotlight-mini">
-                  <small>Archivo asociado</small>
-                  <p>{spotlight.archivo}</p>
+                <div className="spotlight-media-wrap">
+
+                  {spotlight.tipo_archivo === "imagen" && (
+                    <img
+                      src={spotlight.ruta}
+                      alt={spotlight.titulo}
+                      className="spotlight-media-img"
+                    />
+                  )}
+
+                  {spotlight.tipo_archivo === "video" && (
+                    <video
+                      src={spotlight.ruta}
+                      className="spotlight-media-video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  )}
+
+                  {spotlight.tipo_archivo === "pdf" && (
+                    <div
+                      className="spotlight-media-pdf"
+                      style={{ background: `linear-gradient(135deg, ${spotlight.color}22, ${spotlight.color}44)` }}
+                    >
+                      <span className="spotlight-media-pdf-icon">📄</span>
+                      <span className="spotlight-media-pdf-label">PDF</span>
+                      <span className="spotlight-media-pdf-name">{spotlight.archivo}</span>
+                    </div>
+                  )}
+
+                  {(spotlight.tipo_archivo === "presentacion" || !spotlight.tipo_archivo) && (
+                    <div
+                      className="spotlight-media-pdf"
+                      style={{ background: `linear-gradient(135deg, ${spotlight.color}22, ${spotlight.color}44)` }}
+                    >
+                      <span className="spotlight-media-pdf-icon">{spotlight.emoji}</span>
+                      <span className="spotlight-media-pdf-label">{spotlight.categoria}</span>
+                      <span className="spotlight-media-pdf-name">{spotlight.archivo}</span>
+                    </div>
+                  )}
+
+                  <div className="spotlight-mini">
+                    <small>Archivo asociado</small>
+                    <p>{spotlight.archivo}</p>
+                  </div>
+
                 </div>
               </div>
+
             </div>
           )}
         </div>
