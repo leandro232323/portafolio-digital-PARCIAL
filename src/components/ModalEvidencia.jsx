@@ -3,15 +3,15 @@ import { FILE_CONFIG, getPreviewMessage } from "../data/evidencias";
 const SCRATCH_PROYECTOS = [
   {
     numero: "01",
-    titulo: "Proyecto Scratch 1",
+    titulo: "Caligrafia",
     descripcion: "Primer proyecto de Scratch incrustado directamente en el modal.",
     src: "https://scratch.mit.edu/projects/1319230786/embed",
   },
   {
     numero: "02",
-    titulo: "Proyecto Scratch 2",
+    titulo: "Cuento interactivo",
     descripcion: "Espacio para insertar el segundo proyecto de Scratch.",
-    src: "",
+    src: "https://scratch.mit.edu/projects/1321768147/embed",
   },
   {
     numero: "03",
