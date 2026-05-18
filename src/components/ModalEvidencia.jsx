@@ -5,7 +5,7 @@ const SCRATCH_PROYECTOS = [
     numero: "01",
     titulo: "Proyecto Scratch 1",
     descripcion: "Primer proyecto de Scratch incrustado directamente en el modal.",
-    src: "https://scratch.mit.edu/projects/1299555151/embed",
+    src: "https://scratch.mit.edu/projects/1319230786/embed",
   },
   {
     numero: "02",
