@@ -205,8 +205,8 @@ export const EVIDENCIAS = [
       "Material de apoyo y evidencia relacionada con ejercicios prácticos en Scratch para fortalecer la lógica de programación visual.",
     detalle:
       "Esta actividad corresponde al segundo corte y se enfoca en el desarrollo de ejercicios en Scratch. Permite evidenciar comprensión de secuencias, eventos, bloques, interacción y pensamiento computacional aplicado a entornos visuales.",
-    archivo: "Actividad_1.pdf",
-    ruta: assetPath("/Evidencias/corte2/pdfs2Corte/Actividad_1.pdf"),
+    archivo: "Actividad 1 – Ejercicios en Scratch.pdf",
+    ruta: assetPath("/Evidencias/Corte 2/Actividad 1 – Ejercicios en Scratch.pdf"),
     tipo_archivo: "pdf",
     color: "#A8C83A",
     emoji: "🧩",
@@ -223,27 +223,12 @@ export const EVIDENCIAS = [
       "Actividad orientada a reconocer los fundamentos de App Inventor y su entorno de desarrollo para aplicaciones móviles.",
     detalle:
       "Esta evidencia introduce el uso de App Inventor como herramienta para crear aplicaciones móviles. Incluye reconocimiento de la interfaz, componentes, bloques, propiedades y lógica básica para construir soluciones interactivas.",
-    archivo: "Actividad-2.pdf",
-    ruta: assetPath("/Evidencias/corte2/pdfs2Corte/Actividad-2.pdf"),
+    archivo: "ACTIVIDAD 1 - FUNDAMENTOS EN APP INVENTOR.pdf",
+    ruta: assetPath("/Evidencias/Corte 2/ACTIVIDAD 1 - FUNDAMENTOS EN APP INVENTOR.pdf"),
     tipo_archivo: "pdf",
     color: "#2F6F9F",
     emoji: "📱",
     tags: ["Corte 2", "Semana 2", "App Inventor", "Fundamentos"],
-    presentacionAppInventor: {
-      titulo: "Presentación de fundamentos en App Inventor",
-      descripcion:
-        "Espacio destinado para anexar y descargar la presentación trabajada en la Semana 2 del segundo corte.",
-      archivo: "presentacion-app-inventor-semana-2.pptx",
-      ruta: assetPath("/Evidencias/Corte 2/Semana 2/presentacion-app-inventor-semana-2.pptx"),
-    },
-    apksAppInventor: [
-      {
-        titulo: "Descargar APK - Semana 2",
-        descripcion: "Aplicación móvil correspondiente a la actividad de fundamentos en App Inventor.",
-        archivo: "app-inventor-semana-2.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 2/app-inventor-semana-2.apk"),
-      },
-    ],
     destacada: false,
   },
   {
@@ -256,34 +241,12 @@ export const EVIDENCIAS = [
       "Evidencia de creación de la primera aplicación móvil usando App Inventor.",
     detalle:
       "Esta actividad evidencia el paso de la teoría a la práctica mediante la construcción de una primera aplicación móvil. Se integran componentes visuales, eventos y bloques de programación para producir una app funcional.",
-    archivo: "Activdad_3_1.pdf",
-    ruta: assetPath("/Evidencias/corte2/pdfs2Corte/Activdad_3_1.pdf"),
+    archivo: "Actividad creación primer aplicación móvil APP INVENTOR.pdf",
+    ruta: assetPath("/Evidencias/Corte 2/Actividad creación primer aplicación móvil APP INVENTOR.pdf"),
     tipo_archivo: "pdf",
     color: "#3D5AF1",
     emoji: "🚀",
     tags: ["Corte 2", "Semana 3", "Aplicación móvil", "App Inventor"],
-    pdfsComplementarios: [
-      {
-        titulo: "PDF complementario - Semana 3",
-        descripcion: "Segundo documento PDF correspondiente a la Semana 3 del segundo corte.",
-        archivo: "Activdad_3_2.pdf",
-        ruta: assetPath("/Evidencias/corte2/pdfs2Corte/Activdad_3_2.pdf"),
-      },
-    ],
-    apksAppInventor: [
-      {
-        titulo: "Descargar APK - Proyecto 1",
-        descripcion: "Primer proyecto móvil desarrollado en App Inventor durante la Semana 3.",
-        archivo: "app-inventor-semana-3-proyecto-1.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 3/app-inventor-semana-3-proyecto-1.apk"),
-      },
-      {
-        titulo: "Descargar APK - Proyecto 2",
-        descripcion: "Segundo proyecto móvil desarrollado en App Inventor durante la Semana 3.",
-        archivo: "app-inventor-semana-3-proyecto-2.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 3/app-inventor-semana-3-proyecto-2.apk"),
-      },
-    ],
     destacada: false,
   },
   {
@@ -296,38 +259,12 @@ export const EVIDENCIAS = [
       "Actividad enfocada en la gestión de datos y operaciones CRUD dentro de una aplicación en App Inventor.",
     detalle:
       "Esta evidencia trabaja la gestión de datos dentro de aplicaciones móviles, abordando las operaciones crear, leer, actualizar y eliminar. Fortalece la comprensión de estructuras de información, formularios, almacenamiento y lógica de interacción.",
-    archivo: "Sin PDF asociado para Semana 4",
-    ruta: "#",
-    tipo_archivo: "archivo",
+    archivo: "Actividad Gestión de Datos y CRUD APP INVENTOR (PREVIO 2).pdf",
+    ruta: assetPath("/Evidencias/Corte 2/Actividad Gestión de Datos y CRUD APP INVENTOR (PREVIO 2).pdf"),
+    tipo_archivo: "pdf",
     color: "#2A9D8F",
     emoji: "🗂️",
     tags: ["Corte 2", "Semana 4", "CRUD", "Gestión de datos"],
-    apksAppInventor: [
-      {
-        titulo: "Descargar APK - CRUD 1",
-        descripcion: "Primer APK de la actividad de gestión de datos y CRUD.",
-        archivo: "app-inventor-semana-4-crud-1.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-1.apk"),
-      },
-      {
-        titulo: "Descargar APK - CRUD 2",
-        descripcion: "Segundo APK de la actividad de gestión de datos y CRUD.",
-        archivo: "app-inventor-semana-4-crud-2.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-2.apk"),
-      },
-      {
-        titulo: "Descargar APK - CRUD 3",
-        descripcion: "Tercer APK de la actividad de gestión de datos y CRUD.",
-        archivo: "app-inventor-semana-4-crud-3.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-3.apk"),
-      },
-      {
-        titulo: "Descargar APK - CRUD 4",
-        descripcion: "Cuarto APK de la actividad de gestión de datos y CRUD.",
-        archivo: "app-inventor-semana-4-crud-4.apk",
-        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-4.apk"),
-      },
-    ],
     destacada: false,
   },
 ];
@@ -409,31 +346,6 @@ export const SEMANA_ITEMS = [
   },
 ];
 
-
-export const PRIMER_CORTE = {
-  titulo: "Primer Corte",
-  subtitulo: "Fundamentos, diseño y creación de contenidos digitales",
-  descripcion:
-    "El primer corte reúne las evidencias iniciales del portafolio, organizadas en dos semanas. Incluye fundamentos conceptuales, principios multimedia, tendencias interactivas, recursos visuales, videos, PDF y presentación.",
-  banner: "CORTE 1",
-  actividades: EVIDENCIAS.filter((item) => !item.corte || item.corte === "Corte 1"),
-};
-
-export const PRIMER_CORTE_SEMANAS = [
-  {
-    semana: "Semana 1",
-    tema: "Fundamentación conceptual y diseño multimedia",
-    color: "#E76F51",
-    actividades: EVIDENCIAS.filter((item) => (!item.corte || item.corte === "Corte 1") && item.semana === "Semana 1"),
-  },
-  {
-    semana: "Semana 2",
-    tema: "Creación de recursos educativos digitales",
-    color: "#2A9D8F",
-    actividades: EVIDENCIAS.filter((item) => (!item.corte || item.corte === "Corte 1") && item.semana === "Semana 2"),
-  },
-];
-
 export const SEGUNDO_CORTE = {
   titulo: "Segundo Corte",
   subtitulo: "Material de apoyo y actividades",
@@ -488,7 +400,6 @@ export const FILE_CONFIG = {
   video: { label: "Video MP4", icon: "🎬" },
   pdf: { label: "PDF", icon: "📄" },
   presentacion: { label: "PPTX", icon: "📑" },
-  archivo: { label: "Recurso", icon: "📁" },
 };
 
 export function fileExistsPreviewType(tipo) {
@@ -518,13 +429,6 @@ export function getPreviewMessage(item) {
       badge: "Vista previa de presentación",
       title: "Archivo de presentación asociado",
       text: "Los archivos PPTX normalmente no se previsualizan bien en navegador, por eso aquí se deja acceso directo para abrirlo o convertirlo luego a PDF.",
-    };
-  }
-  if (item.tipo_archivo === "archivo") {
-    return {
-      badge: "Recurso sin PDF cargado",
-      title: "Actividad sin vista previa documental",
-      text: "Esta actividad se conserva dentro del segundo corte, pero no se carga PDF en el modal porque la vista previa documental fue solicitada solo hasta la Semana 3.",
     };
   }
   return {

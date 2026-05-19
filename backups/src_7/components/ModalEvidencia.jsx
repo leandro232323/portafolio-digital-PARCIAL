@@ -3,13 +3,13 @@ import { FILE_CONFIG, getPreviewMessage } from "../data/evidencias";
 const SCRATCH_PROYECTOS = [
   {
     numero: "01",
-    titulo: "Ortografía Game",
+    titulo: "Caligrafía",
     descripcion: "Primer proyecto de Scratch incrustado directamente en el modal.",
     src: "https://scratch.mit.edu/projects/1319230786/embed",
   },
   {
     numero: "02",
-    titulo: "Cuento Interactivo",
+    titulo: "Cuento interactivo",
     descripcion: "Segundo proyecto de Scratch incrustado directamente en el modal.",
     src: "https://scratch.mit.edu/projects/1321768147/embed",
   },
@@ -167,42 +167,6 @@ function AppInventorRecursos({ modal }) {
   );
 }
 
-function PdfComplementariosModal({ pdfs }) {
-  if (!pdfs?.length) return null;
-
-  return (
-    <div className="pdf-extra-section">
-      <div className="pdf-extra-header">
-        <span>PDF adicional</span>
-        <strong>Documento complementario de la actividad</strong>
-        <p>
-          Este espacio permite visualizar documentos adicionales sin salir del modal.
-        </p>
-      </div>
-
-      {pdfs.map((pdf) => (
-        <div className="pdf-extra-card" key={pdf.ruta}>
-          <div className="pdf-extra-info">
-            <small>{pdf.archivo}</small>
-            <h3>{pdf.titulo}</h3>
-            <p>{pdf.descripcion}</p>
-          </div>
-
-          <div className="pdf-extra-frame">
-            <iframe src={pdf.ruta} title={pdf.titulo} />
-          </div>
-
-          <div className="pdf-extra-actions">
-            <a href={pdf.ruta} target="_blank" rel="noreferrer">
-              🔗 Abrir PDF en otra pestaña
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function ModalEvidencia({
   modal,
   setModal,
@@ -214,18 +178,12 @@ export default function ModalEvidencia({
   const tieneRecursosAppInventor =
     Boolean(modal.presentacionAppInventor) ||
     Boolean(modal.apksAppInventor?.length);
-  const tienePdfsComplementarios = Boolean(modal.pdfsComplementarios?.length);
 
   return (
     <div className="modal-backdrop" onClick={() => setModal(null)}>
       <div
         className={`modal-box ${
-          modal.id === 12 ||
-          modal.tipo_archivo === "pdf" ||
-          tieneRecursosAppInventor ||
-          tienePdfsComplementarios
-            ? "modal-box-wide"
-            : ""
+          modal.id === 12 || tieneRecursosAppInventor ? "modal-box-wide" : ""
         }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -315,22 +273,10 @@ export default function ModalEvidencia({
                         también podría mostrarse aquí directamente dentro del portafolio.
                       </div>
                     )}
-
-                    {modal.tipo_archivo === "archivo" && (
-                      <div className="pptx-note">
-                        Esta actividad no tiene PDF cargado en el modal. La visualización
-                        documental del segundo corte se configuró únicamente desde la
-                        <strong> Semana 1 hasta la Semana 3</strong>.
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
             </div>
-
-            {tienePdfsComplementarios && (
-              <PdfComplementariosModal pdfs={modal.pdfsComplementarios} />
-            )}
 
             <div className="modal-actions">
               <button
@@ -340,16 +286,14 @@ export default function ModalEvidencia({
                 ✓ Cerrar evidencia
               </button>
 
-              {modal.ruta && modal.ruta !== "#" && (
-                <a
-                  href={modal.ruta}
-                  className="modal-btn-secondary"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  🔗 Abrir recurso
-                </a>
-              )}
+              <a
+                href={modal.ruta}
+                className="modal-btn-secondary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                🔗 Abrir recurso
+              </a>
             </div>
           </div>
         </div>

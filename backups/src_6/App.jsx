@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { EVIDENCIAS, PILARES } from "./data/evidencias";
+import { EVIDENCIAS, PILARES, SEMANA_ITEMS } from "./data/evidencias";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Galeria from "./components/Galeria";
 import ModalEvidencia from "./components/ModalEvidencia";
-import CorteUno from "./components/CorteUno";
 import CorteDos from "./components/CorteDos";
 
 function normalizeText(text) {
@@ -23,8 +22,16 @@ export default function App() {
   const [viewMode, setViewMode] = useState("grid");
   const [modal, setModal] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [openAcc, setOpenAcc] = useState(0);
   const [search, setSearch] = useState("");
+  const [spotlightIndex, setSpotlightIndex] = useState(0);
 
+  const destacadas = useMemo(
+    () => EVIDENCIAS.filter((e) => e.destacada),
+    []
+  );
+
+  const spotlight = destacadas[spotlightIndex % destacadas.length];
 
   const filtered = useMemo(() => {
     let data = EVIDENCIAS;
@@ -88,6 +95,12 @@ export default function App() {
     return () => window.removeEventListener("keydown", fn);
   }, [modal, modalIdx, filtered]);
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSpotlightIndex((prev) => (prev + 1) % destacadas.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, [destacadas.length]);
 
   return (
     <>
@@ -270,7 +283,138 @@ export default function App() {
         </div>
       </section>
 
-      <CorteUno setModal={setModal} />
+      <div className="section-dark" id="corte">
+        <div className="section-inner">
+          <p className="sec-kicker light">Corte académico I</p>
+          <h2 className="sec-title light">
+            Primer Corte <mark className="amber">(Semanas 1–2)</mark>
+          </h2>
+          <p className="sec-body light" style={{ marginBottom: 0 }}>
+            En este corte se desarrollaron actividades orientadas a comprender
+            los fundamentos del diseño de contenidos digitales y a crear
+            recursos educativos usando herramientas tecnológicas.
+          </p>
+
+          <div className="accordion" style={{ marginTop: "3rem" }}>
+            {SEMANA_ITEMS.map((s, i) => (
+              <div key={i} className={`acc-item ${openAcc === i ? "open" : ""}`}>
+                <button
+                  className="acc-trigger"
+                  onClick={() => setOpenAcc(openAcc === i ? -1 : i)}
+                >
+                  <div className="acc-trigger-left">
+                    <span className="acc-week-badge" style={{ background: s.color }}>
+                      {s.semana}
+                    </span>
+                    <span className="acc-title">{s.tema}</span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                    <span className="acc-count">{s.count} actividades</span>
+                    <span className="acc-arrow">▼</span>
+                  </div>
+                </button>
+                <div className="acc-body">
+                  <div className="acc-list">
+                    {s.items.map((item, j) => (
+                      <div key={j} className="acc-li">
+                        <span className="acc-li-dot" style={{ "--color": s.color }} />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {spotlight && (
+            <div className="spotlight">
+              <div className="spotlight-left">
+                <div className="spotlight-kicker">Evidencia destacada</div>
+                <h3 className="spotlight-title">{spotlight.titulo}</h3>
+                <p className="spotlight-desc">{spotlight.detalle}</p>
+
+                <div className="spotlight-tags">
+                  <span className="spotlight-tag">{spotlight.semana}</span>
+                  <span className="spotlight-tag">{spotlight.categoria}</span>
+                  {(spotlight.tags || []).map((tag) => (
+                    <span className="spotlight-tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="spotlight-actions">
+                  <button className="sp-btn primary" onClick={() => setModal(spotlight)}>
+                    Ver detalle
+                  </button>
+                  <button
+                    className="sp-btn secondary"
+                    onClick={() =>
+                      setSpotlightIndex((prev) => (prev + 1) % destacadas.length)
+                    }
+                  >
+                    Cambiar destacada
+                  </button>
+                </div>
+              </div>
+
+              <div className="spotlight-right">
+                <div className="spotlight-media-wrap">
+
+                  {spotlight.tipo_archivo === "imagen" && (
+                    <img
+                      src={spotlight.ruta}
+                      alt={spotlight.titulo}
+                      className="spotlight-media-img"
+                    />
+                  )}
+
+                  {spotlight.tipo_archivo === "video" && (
+                    <video
+                      src={spotlight.ruta}
+                      className="spotlight-media-video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  )}
+
+                  {spotlight.tipo_archivo === "pdf" && (
+                    <div
+                      className="spotlight-media-pdf"
+                      style={{ background: `linear-gradient(135deg, ${spotlight.color}22, ${spotlight.color}44)` }}
+                    >
+                      <span className="spotlight-media-pdf-icon">📄</span>
+                      <span className="spotlight-media-pdf-label">PDF</span>
+                      <span className="spotlight-media-pdf-name">{spotlight.archivo}</span>
+                    </div>
+                  )}
+
+                  {(spotlight.tipo_archivo === "presentacion" || !spotlight.tipo_archivo) && (
+                    <div
+                      className="spotlight-media-pdf"
+                      style={{ background: `linear-gradient(135deg, ${spotlight.color}22, ${spotlight.color}44)` }}
+                    >
+                      <span className="spotlight-media-pdf-icon">{spotlight.emoji}</span>
+                      <span className="spotlight-media-pdf-label">{spotlight.categoria}</span>
+                      <span className="spotlight-media-pdf-name">{spotlight.archivo}</span>
+                    </div>
+                  )}
+
+                  <div className="spotlight-mini">
+                    <small>Archivo asociado</small>
+                    <p>{spotlight.archivo}</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
+      </div>
 
       <CorteDos setModal={setModal} />
 

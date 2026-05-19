@@ -176,7 +176,8 @@ function PdfComplementariosModal({ pdfs }) {
         <span>PDF adicional</span>
         <strong>Documento complementario de la actividad</strong>
         <p>
-          Este espacio permite visualizar documentos adicionales sin salir del modal.
+          Este espacio permite visualizar documentos adicionales del segundo corte
+          sin salir del modal.
         </p>
       </div>
 
@@ -220,10 +221,7 @@ export default function ModalEvidencia({
     <div className="modal-backdrop" onClick={() => setModal(null)}>
       <div
         className={`modal-box ${
-          modal.id === 12 ||
-          modal.tipo_archivo === "pdf" ||
-          tieneRecursosAppInventor ||
-          tienePdfsComplementarios
+          modal.id === 12 || tieneRecursosAppInventor || tienePdfsComplementarios
             ? "modal-box-wide"
             : ""
         }`}

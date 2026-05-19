@@ -409,31 +409,6 @@ export const SEMANA_ITEMS = [
   },
 ];
 
-
-export const PRIMER_CORTE = {
-  titulo: "Primer Corte",
-  subtitulo: "Fundamentos, diseño y creación de contenidos digitales",
-  descripcion:
-    "El primer corte reúne las evidencias iniciales del portafolio, organizadas en dos semanas. Incluye fundamentos conceptuales, principios multimedia, tendencias interactivas, recursos visuales, videos, PDF y presentación.",
-  banner: "CORTE 1",
-  actividades: EVIDENCIAS.filter((item) => !item.corte || item.corte === "Corte 1"),
-};
-
-export const PRIMER_CORTE_SEMANAS = [
-  {
-    semana: "Semana 1",
-    tema: "Fundamentación conceptual y diseño multimedia",
-    color: "#E76F51",
-    actividades: EVIDENCIAS.filter((item) => (!item.corte || item.corte === "Corte 1") && item.semana === "Semana 1"),
-  },
-  {
-    semana: "Semana 2",
-    tema: "Creación de recursos educativos digitales",
-    color: "#2A9D8F",
-    actividades: EVIDENCIAS.filter((item) => (!item.corte || item.corte === "Corte 1") && item.semana === "Semana 2"),
-  },
-];
-
 export const SEGUNDO_CORTE = {
   titulo: "Segundo Corte",
   subtitulo: "Material de apoyo y actividades",
