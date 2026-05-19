@@ -27,7 +27,7 @@ const SCRATCH_PROYECTOS = [
   },
 ];
 
-function ScratchProyectosModal({ proyectos = SCRATCH_PROYECTOS }) {
+function ScratchProyectosModal() {
   return (
     <div className="scratch-modal-section">
       <div className="scratch-projects-header">
@@ -40,7 +40,7 @@ function ScratchProyectosModal({ proyectos = SCRATCH_PROYECTOS }) {
       </div>
 
       <div className="scratch-projects-grid scratch-projects-grid-modal">
-        {proyectos.map((proyecto) => {
+        {SCRATCH_PROYECTOS.map((proyecto) => {
           const tieneProyecto = proyecto.src.trim() !== "";
 
           return (
@@ -167,57 +167,6 @@ function AppInventorRecursos({ modal }) {
   );
 }
 
-function YoutubeVideosModal({ videos }) {
-  if (!videos?.length) return null;
-
-  return (
-    <div className="youtube-modal-section">
-      <div className="appinventor-header">
-        <span>Videos de YouTube</span>
-        <strong>Espacios para demostraciones embebidas</strong>
-        <p>
-          Cuando tengas los enlaces de YouTube, pega únicamente la URL tipo
-          <code> https://www.youtube.com/embed/ID_DEL_VIDEO</code> en el archivo
-          de evidencias.
-        </p>
-      </div>
-
-      <div className="youtube-modal-grid">
-        {videos.map((video, index) => {
-          const tieneVideo = Boolean(video.src?.trim());
-
-          return (
-            <div className="youtube-modal-card" key={`${video.titulo}-${index}`}>
-              <div className="corte2-resource-top">
-                <span>Video {String(index + 1).padStart(2, "0")}</span>
-                <strong>{video.titulo}</strong>
-              </div>
-
-              <div className="youtube-modal-frame">
-                {tieneVideo ? (
-                  <iframe
-                    src={video.src}
-                    title={video.titulo}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="corte2-empty-embed">
-                    <span>▶️</span>
-                    <strong>Espacio para video embebido</strong>
-                    <small>Pega aquí la URL embed de YouTube.</small>
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 function PdfComplementariosModal({ pdfs }) {
   if (!pdfs?.length) return null;
 
@@ -266,7 +215,6 @@ export default function ModalEvidencia({
     Boolean(modal.presentacionAppInventor) ||
     Boolean(modal.apksAppInventor?.length);
   const tienePdfsComplementarios = Boolean(modal.pdfsComplementarios?.length);
-  const tieneVideosYoutube = Boolean(modal.youtubeVideos?.length);
 
   return (
     <div className="modal-backdrop" onClick={() => setModal(null)}>
@@ -275,8 +223,7 @@ export default function ModalEvidencia({
           modal.id === 12 ||
           modal.tipo_archivo === "pdf" ||
           tieneRecursosAppInventor ||
-          tienePdfsComplementarios ||
-          tieneVideosYoutube
+          tienePdfsComplementarios
             ? "modal-box-wide"
             : ""
         }`}
@@ -329,11 +276,9 @@ export default function ModalEvidencia({
               </div>
             </div>
 
-            {modal.id === 12 && <ScratchProyectosModal proyectos={modal.scratchProyectos || SCRATCH_PROYECTOS} />}
+            {modal.id === 12 && <ScratchProyectosModal />}
 
             {tieneRecursosAppInventor && <AppInventorRecursos modal={modal} />}
-
-            {tieneVideosYoutube && <YoutubeVideosModal videos={modal.youtubeVideos} />}
 
             <div className="modal-placeholder">
               <strong>{preview.badge}</strong>

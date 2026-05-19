@@ -192,7 +192,7 @@ export const EVIDENCIAS = [
   },
 
   // ==========================
-  // CORTE 2
+  // CORTE 2 (SIN MODIFICAR)
   // ==========================
 
   {
@@ -211,32 +211,6 @@ export const EVIDENCIAS = [
     color: "#A8C83A",
     emoji: "🧩",
     tags: ["Corte 2", "Semana 1", "Scratch", "Programación visual"],
-    scratchProyectos: [
-      {
-        numero: "01",
-        titulo: "Ortografía Game",
-        descripcion: "Proyecto de Scratch incrustado dentro de la tarjeta del Corte 2.",
-        src: "https://scratch.mit.edu/projects/1319230786/embed",
-      },
-      {
-        numero: "02",
-        titulo: "Cuento Interactivo",
-        descripcion: "Segundo proyecto de Scratch incrustado dentro de la tarjeta del Corte 2.",
-        src: "https://scratch.mit.edu/projects/1321768147/embed",
-      },
-      {
-        numero: "03",
-        titulo: "Proyecto Scratch 3",
-        descripcion: "Espacio preparado para incrustar el tercer proyecto de Scratch.",
-        src: "",
-      },
-      {
-        numero: "04",
-        titulo: "Proyecto Scratch 4",
-        descripcion: "Espacio preparado para incrustar el cuarto proyecto de Scratch.",
-        src: "",
-      },
-    ],
     destacada: false,
   },
   {
@@ -266,8 +240,8 @@ export const EVIDENCIAS = [
       {
         titulo: "Descargar APK - Semana 2",
         descripcion: "Aplicación móvil correspondiente a la actividad de fundamentos en App Inventor.",
-        archivo: "brujula2.apk",
-        ruta: assetPath("/app_inventor/brujula2.apk"),
+        archivo: "app-inventor-semana-2.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 2/app-inventor-semana-2.apk"),
       },
     ],
     destacada: false,
@@ -300,14 +274,14 @@ export const EVIDENCIAS = [
       {
         titulo: "Descargar APK - Proyecto 1",
         descripcion: "Primer proyecto móvil desarrollado en App Inventor durante la Semana 3.",
-        archivo: "semana3-proyecto1.apk",
-        ruta: assetPath("/app_inventor/semana3-proyecto1.apk"),
+        archivo: "app-inventor-semana-3-proyecto-1.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 3/app-inventor-semana-3-proyecto-1.apk"),
       },
       {
         titulo: "Descargar APK - Proyecto 2",
         descripcion: "Segundo proyecto móvil desarrollado en App Inventor durante la Semana 3.",
-        archivo: "semana3-proyecto2.apk",
-        ruta: assetPath("/app_inventor/semana3-proyecto2.apk"),
+        archivo: "app-inventor-semana-3-proyecto-2.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 3/app-inventor-semana-3-proyecto-2.apk"),
       },
     ],
     destacada: false,
@@ -332,33 +306,27 @@ export const EVIDENCIAS = [
       {
         titulo: "Descargar APK - CRUD 1",
         descripcion: "Primer APK de la actividad de gestión de datos y CRUD.",
-        archivo: "semana4-crud1.apk",
-        ruta: assetPath("/app_inventor/semana4-crud1.apk"),
+        archivo: "app-inventor-semana-4-crud-1.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-1.apk"),
       },
       {
         titulo: "Descargar APK - CRUD 2",
         descripcion: "Segundo APK de la actividad de gestión de datos y CRUD.",
-        archivo: "semana4-crud2.apk",
-        ruta: assetPath("/app_inventor/semana4-crud2.apk"),
+        archivo: "app-inventor-semana-4-crud-2.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-2.apk"),
       },
       {
         titulo: "Descargar APK - CRUD 3",
         descripcion: "Tercer APK de la actividad de gestión de datos y CRUD.",
-        archivo: "semana4-crud3.apk",
-        ruta: assetPath("/app_inventor/semana4-crud3.apk"),
+        archivo: "app-inventor-semana-4-crud-3.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-3.apk"),
       },
       {
         titulo: "Descargar APK - CRUD 4",
         descripcion: "Cuarto APK de la actividad de gestión de datos y CRUD.",
-        archivo: "semana4-crud4.apk",
-        ruta: assetPath("/app_inventor/semana4-crud4.apk"),
+        archivo: "app-inventor-semana-4-crud-4.apk",
+        ruta: assetPath("/Evidencias/Corte 2/Semana 4/app-inventor-semana-4-crud-4.apk"),
       },
-    ],
-    youtubeVideos: [
-      { titulo: "Video demostrativo 1", src: "" },
-      { titulo: "Video demostrativo 2", src: "" },
-      { titulo: "Video demostrativo 3", src: "" },
-      { titulo: "Video demostrativo 4", src: "" },
     ],
     destacada: false,
   },

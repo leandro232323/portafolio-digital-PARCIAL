@@ -34,132 +34,6 @@ function renderPreview(actividad, file) {
   return <span>{file.icon}</span>;
 }
 
-function ScratchCorteDos({ proyectos = [] }) {
-  if (!proyectos.length) return null;
-
-  return (
-    <div className="corte2-extra-section corte2-scratch-section">
-      <div className="corte2-extra-header">
-        <span>Scratch embebido</span>
-        <strong>4 actividades interactivas</strong>
-      </div>
-
-      <div className="corte2-scratch-grid">
-        {proyectos.map((proyecto) => {
-          const tieneProyecto = Boolean(proyecto.src?.trim());
-
-          return (
-            <div className="corte2-scratch-card" key={proyecto.numero}>
-              <div className="corte2-resource-top">
-                <span>Actividad {proyecto.numero}</span>
-                <strong>{proyecto.titulo}</strong>
-              </div>
-
-              <div className="corte2-scratch-frame">
-                {tieneProyecto ? (
-                  <iframe
-                    src={proyecto.src}
-                    title={proyecto.titulo}
-                    allowTransparency="true"
-                    frameBorder="0"
-                    scrolling="no"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="corte2-empty-embed">
-                    <span>🧩</span>
-                    <strong>Espacio listo</strong>
-                    <small>Pega aquí la URL /embed del proyecto de Scratch.</small>
-                  </div>
-                )}
-              </div>
-
-              <p>{proyecto.descripcion}</p>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function ApkButtonsCorteDos({ apks = [] }) {
-  if (!apks.length) return null;
-
-  return (
-    <div className="corte2-extra-section corte2-apk-section">
-      <div className="corte2-extra-header">
-        <span>APK App Inventor</span>
-        <strong>Botones de descarga</strong>
-      </div>
-
-      <div className="corte2-apk-grid">
-        {apks.map((apk, index) => (
-          <a
-            href={apk.ruta}
-            className="corte2-apk-btn"
-            download
-            key={`${apk.ruta}-${index}`}
-          >
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <div>
-              <strong>{apk.titulo}</strong>
-              <small>{apk.archivo}</small>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function YoutubeVideosCorteDos({ videos = [] }) {
-  if (!videos.length) return null;
-
-  return (
-    <div className="corte2-extra-section corte2-youtube-section">
-      <div className="corte2-extra-header">
-        <span>Videos embebidos</span>
-        <strong>4 espacios para YouTube</strong>
-      </div>
-
-      <div className="corte2-youtube-grid">
-        {videos.map((video, index) => {
-          const tieneVideo = Boolean(video.src?.trim());
-
-          return (
-            <div className="corte2-youtube-card" key={`${video.titulo}-${index}`}>
-              <div className="corte2-resource-top">
-                <span>Video {String(index + 1).padStart(2, "0")}</span>
-                <strong>{video.titulo}</strong>
-              </div>
-
-              <div className="corte2-youtube-frame">
-                {tieneVideo ? (
-                  <iframe
-                    src={video.src}
-                    title={video.titulo}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="corte2-empty-embed">
-                    <span>▶️</span>
-                    <strong>Espacio para video</strong>
-                    <small>Pega aquí la URL embed de YouTube.</small>
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 export default function CorteDos({ setModal }) {
   return (
     <section className="section corte-dos corte2-premium" id="corte-dos">
@@ -232,14 +106,10 @@ export default function CorteDos({ setModal }) {
             <div className="corte2-activity-list">
               {grupo.actividades.map((actividad) => {
                 const file = FILE_CONFIG[actividad.tipo_archivo] || FILE_CONFIG.archivo;
-                const tieneScratch = Boolean(actividad.scratchProyectos?.length);
-                const tieneApks = Boolean(actividad.apksAppInventor?.length);
-                const tieneVideos = Boolean(actividad.youtubeVideos?.length);
-                const tieneExtras = tieneScratch || tieneApks || tieneVideos;
 
                 return (
                   <div
-                    className={`corte2-activity-card ${tieneExtras ? "corte2-rich-card" : ""}`}
+                    className="corte2-activity-card"
                     key={actividad.id}
                     style={{ "--activity-color": actividad.color }}
                   >
@@ -265,10 +135,6 @@ export default function CorteDos({ setModal }) {
                           <span key={tag}>{tag}</span>
                         ))}
                       </div>
-
-                      <ScratchCorteDos proyectos={actividad.scratchProyectos} />
-                      <ApkButtonsCorteDos apks={actividad.apksAppInventor} />
-                      <YoutubeVideosCorteDos videos={actividad.youtubeVideos} />
 
                       <div className="corte2-actions">
                         <button type="button" onClick={() => setModal(actividad)}>
