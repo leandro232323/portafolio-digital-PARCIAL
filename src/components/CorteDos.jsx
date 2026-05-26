@@ -192,6 +192,8 @@ export default function CorteDos({ setModal }) {
 
       <div className="corte2-showcase">
         <div className="corte2-showcase-left">
+          {/* OpenCode hizo esto — Esquina decorativa */}
+          <span className="corte2-corner-deco" aria-hidden="true" />
           <span className="corte2-mini-label">CORTE 2</span>
           <h3>{SEGUNDO_CORTE.subtitulo}</h3>
           <p>
