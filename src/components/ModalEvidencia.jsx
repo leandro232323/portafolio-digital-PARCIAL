@@ -218,6 +218,53 @@ function YoutubeVideosModal({ videos }) {
   );
 }
 
+function LocalVideosModal({ videos }) {
+  if (!videos?.length) return null;
+
+  return (
+    <div className="youtube-modal-section">
+      <div className="appinventor-header">
+        <span>Videos demostrativos</span>
+        <strong>Reproducción local de videos</strong>
+        <p>
+          Videos demostrativos de las aplicaciones desarrolladas durante la semana.
+        </p>
+      </div>
+
+      <div className="youtube-modal-grid">
+        {videos.map((video, index) => {
+          const tieneVideo = Boolean(video.ruta?.trim());
+
+          return (
+            <div className="youtube-modal-card" key={`${video.titulo}-${index}`}>
+              <div className="corte2-resource-top">
+                <span>Video {String(index + 1).padStart(2, "0")}</span>
+                <strong>{video.titulo}</strong>
+              </div>
+
+              <div className="youtube-modal-frame">
+                {tieneVideo ? (
+                  <video controls preload="metadata" style={{ width: "100%", height: "100%", objectFit: "contain", background: "#000" }}>
+                    <source src={video.ruta} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="corte2-empty-embed">
+                    <span>▶️</span>
+                    <strong>Espacio para video</strong>
+                    <small>Pega aquí la ruta del archivo de video.</small>
+                  </div>
+                )}
+              </div>
+
+              <p>{video.descripcion}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function PdfComplementariosModal({ pdfs }) {
   if (!pdfs?.length) return null;
 
@@ -267,11 +314,13 @@ export default function ModalEvidencia({
     Boolean(modal.apksAppInventor?.length);
   const tienePdfsComplementarios = Boolean(modal.pdfsComplementarios?.length);
   const tieneVideosYoutube = Boolean(modal.youtubeVideos?.length);
+  const tieneVideosLocales = Boolean(modal.videosLocales?.length);
   const esPdf = modal.tipo_archivo === "pdf";
   const tieneSubSecciones =
     modal.id === 12 ||
     tieneRecursosAppInventor ||
     tieneVideosYoutube ||
+    tieneVideosLocales ||
     tienePdfsComplementarios;
 
   return (
@@ -421,6 +470,9 @@ export default function ModalEvidencia({
               {tieneRecursosAppInventor && <AppInventorRecursos modal={modal} />}
               {tieneVideosYoutube && (
                 <YoutubeVideosModal videos={modal.youtubeVideos} />
+              )}
+              {tieneVideosLocales && (
+                <LocalVideosModal videos={modal.videosLocales} />
               )}
               {tienePdfsComplementarios && (
                 <PdfComplementariosModal pdfs={modal.pdfsComplementarios} />

@@ -1,0 +1,29 @@
+1️⃣ Producción de contenidos educativos (textos, resúmenes, guías de estudio)
+
+Genera un contenido educativo sobre un tema específico usando IA, donde el prompt 
+incluye de manera implícita: el contexto educativo (estudiantes universitarios o técnicos 
+con conocimientos básicos de programación e IA), el rol asignado al modelo (experto en educación y creación 
+de contenidos), la acción a realizar (crear textos explicativos, resúmenes y guías de estudio claros), 
+el formato de salida (lista organizada por subtítulos con concepto, anatomía del prompt y ejemplo práctico) 
+y el tono (amigable, didáctico y motivacional).
+
+2️⃣ Recursos visuales y multimedia (infografías, imágenes y videos) IA ----> DALL·E 3 o MidJourney / Leonardo AI
+
+Crea prompts que generen recursos visuales y multimedia educativos usando IA, integrando implícitamente el 
+contexto (estudiantes universitarios o técnicos), el rol del modelo (diseñador educativo experto en IA), 
+la acción (crear infografías interactivas, imágenes y videos educativos), el formato (presentación en lista 
+con concepto, anatomía del prompt y ejemplo práctico) y el tono (amigable, claro y motivacional).
+
+3️⃣ Programación y creatividad (juegos educativos, historias interactivas, simulaciones)
+
+Desarrolla prompts que permitan generar juegos, historias interactivas y simulaciones educativas, incorporando 
+de manera implícita el contexto educativo (nivel universitario o técnico), el rol del modelo (experto en gamificación 
+y programación educativa con IA), la acción (crear juegos educativos interactivos, historias y simulaciones), el formato
+ (lista con concepto, anatomía del prompt y ejemplo práctico) y el tono (amigable, motivacional y claro).
+
+4️⃣ Personalización del aprendizaje (ejercicios adaptados al nivel del estudiante)
+
+Crea prompts para generar ejercicios educativos adaptados al nivel del estudiante, mostrando implícitamente la estructura 
+CRAFT: el contexto (estudiantes de distintos niveles), el rol del modelo (experto en aprendizaje personalizado con IA), 
+la acción (crear ejercicios adaptados, con retroalimentación y refuerzo de conceptos), el formato (lista con concepto, 
+anatomía del prompt y ejemplo práctico) y el tono (didáctico, motivador y claro).

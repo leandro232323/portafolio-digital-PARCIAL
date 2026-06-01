@@ -2997,6 +2997,53 @@ a{text-decoration:none}
   flex-shrink:0;
 }
 
+.corte2-videos-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.7rem;
+}
+.corte2-video-card{
+  background:#fff;
+  border:1.5px solid var(--border);
+  border-radius:14px;
+  padding:.7rem;
+  box-shadow:0 8px 24px rgba(24,33,45,.05);
+}
+.corte2-video-card p{
+  font-size:.68rem;
+  line-height:1.5;
+  color:var(--muted);
+  margin:0;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.corte2-video-frame{
+  width:100%;
+  aspect-ratio:16 / 10;
+  border-radius:12px;
+  overflow:hidden;
+  background:linear-gradient(135deg,rgba(47,111,115,.10),rgba(215,168,74,.12));
+  border:1px solid rgba(24,33,45,.08);
+  margin-bottom:.55rem;
+}
+.corte2-video-frame video{
+  width:100%;
+  height:100%;
+  display:block;
+  background:#000;
+  object-fit:contain;
+}
+@media(max-width:768px){
+  .corte2-videos-grid{
+    grid-template-columns:1fr;
+  }
+  .corte2-video-frame{
+    aspect-ratio:16 / 9;
+  }
+}
+
 @media(max-width:640px){
   .modal-pdf-mode .real-preview{
     height:calc(100vh - 120px);min-height:350px;

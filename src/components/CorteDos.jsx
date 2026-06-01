@@ -160,6 +160,50 @@ function YoutubeVideosCorteDos({ videos = [] }) {
   );
 }
 
+function LocalVideosCorteDos({ videos = [] }) {
+  if (!videos.length) return null;
+
+  return (
+    <div className="corte2-extra-section corte2-videos-section">
+      <div className="corte2-extra-header">
+        <span>Videos demostrativos</span>
+        <strong>{videos.length} video{videos.length === 1 ? "" : "s"} local{videos.length === 1 ? "" : "es"}</strong>
+      </div>
+
+      <div className="corte2-videos-grid">
+        {videos.map((video, index) => {
+          const tieneVideo = Boolean(video.ruta?.trim());
+
+          return (
+            <div className="corte2-video-card" key={`${video.titulo}-${index}`}>
+              <div className="corte2-resource-top">
+                <span>Video {String(index + 1).padStart(2, "0")}</span>
+                <strong>{video.titulo}</strong>
+              </div>
+
+              <div className="corte2-video-frame">
+                {tieneVideo ? (
+                  <video controls preload="metadata">
+                    <source src={video.ruta} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div className="corte2-empty-embed">
+                    <span>▶️</span>
+                    <strong>Espacio para video</strong>
+                    <small>Pega aquí la ruta del archivo de video.</small>
+                  </div>
+                )}
+              </div>
+
+              <p>{video.descripcion}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function CorteDos({ setModal }) {
   return (
     <section className="section corte-dos corte2-premium" id="corte-dos">
@@ -237,7 +281,8 @@ export default function CorteDos({ setModal }) {
                 const tieneScratch = Boolean(actividad.scratchProyectos?.length);
                 const tieneApks = Boolean(actividad.apksAppInventor?.length);
                 const tieneVideos = Boolean(actividad.youtubeVideos?.length);
-                const tieneExtras = tieneScratch || tieneApks || tieneVideos;
+                const tieneVideosLocales = Boolean(actividad.videosLocales?.length);
+                const tieneExtras = tieneScratch || tieneApks || tieneVideos || tieneVideosLocales;
 
                 return (
                   <div
@@ -270,6 +315,7 @@ export default function CorteDos({ setModal }) {
 
                       <ScratchCorteDos proyectos={actividad.scratchProyectos} />
                       <ApkButtonsCorteDos apks={actividad.apksAppInventor} />
+                      <LocalVideosCorteDos videos={actividad.videosLocales} />
                       <YoutubeVideosCorteDos videos={actividad.youtubeVideos} />
 
                       <div className="corte2-actions">
