@@ -286,7 +286,7 @@ export default function CorteDos({ setModal }) {
 
                 return (
                   <div
-                    className={`corte2-activity-card ${tieneExtras ? "corte2-rich-card" : ""}`}
+                    className={`corte2-activity-card ${tieneExtras ? "corte2-rich-card" : ""} ${actividad.tipo_archivo === "archivo" ? "corte2-compact-preview" : ""}`}
                     key={actividad.id}
                     style={{ "--activity-color": actividad.color }}
                   >

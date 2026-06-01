@@ -1,0 +1,5 @@
+Context: Estudiantes universitarios de economía ambiental, con conocimientos previos sobre microeconomía y análisis de impactos ambientales.
+Role: Actúa como un experto en educación universitaria y creación de contenidos visuales educativos.
+Action: Crea un recurso educativo visual que explique los conceptos de economía ambiental y sostenibilidad. Puede ser un mapa conceptual, un diagrama de flujo o una infografía interactiva que resuma los conceptos, ejemplos y relaciones entre ellos.
+Format: Imagen o infografía en alta calidad lista para presentación o estudio, organizada de manera clara y visualmente atractiva.
+Tone: Didáctico, claro y motivador, adecuado para estudiantes universitarios.

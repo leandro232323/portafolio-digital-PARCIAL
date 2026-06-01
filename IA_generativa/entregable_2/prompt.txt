@@ -1,0 +1,5 @@
+Context: Estudiantes universitarios de ingeniería ambiental aprendiendo sobre transporte sostenible.
+Role: Actúa como diseñador educativo.
+Action: Crea un recurso visual simple que muestre un “sistema de transporte sostenible” con íconos, flechas y colores para representar cómo diferentes opciones de transporte afectan el medio ambiente. No se necesita código ni simulación real.
+Format: Imagen o infografía clara, lista para presentación o estudio.
+Tone: Didáctico, creativo y motivador para estudiantes universitarios.

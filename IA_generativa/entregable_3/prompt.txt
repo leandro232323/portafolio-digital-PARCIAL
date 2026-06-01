@@ -1,0 +1,5 @@
+Context: Estudiantes universitarios de ciencias ambientales estudiando cambio climático y energías renovables.
+Role: Actúa como diseñador educativo experto en creación de videos educativos.
+Action: Genera un video educativo de 30–60 segundos que explique los conceptos clave del cambio climático, emisiones de CO2 y energías renovables. El video debe incluir gráficos animados, iconografía clara y ejemplos visuales.
+Format: Video educativo listo para mostrar en clase o plataforma online, en formato mp4 o similar.
+Tone: Visual, claro, atractivo y educativo, orientado a motivar y facilitar el aprendizaje.

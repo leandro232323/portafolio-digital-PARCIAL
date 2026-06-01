@@ -6,6 +6,7 @@ import Galeria from "./components/Galeria";
 import ModalEvidencia from "./components/ModalEvidencia";
 import CorteUno from "./components/CorteUno";
 import CorteDos from "./components/CorteDos";
+import IaGenerativa from "./components/IaGenerativa";
 
 function normalizeText(text) {
   return String(text || "")
@@ -273,6 +274,8 @@ export default function App() {
       <CorteUno setModal={setModal} />
 
       <CorteDos setModal={setModal} />
+
+      <IaGenerativa />
 
       <Galeria
         filtro={filtro}

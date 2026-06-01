@@ -1,0 +1,7 @@
+Context: Estudiantes universitarios de ciencias ambientales con distintos niveles de 
+conocimiento sobre políticas ambientales. Role: Actúa como diseñador educativo. Action: 
+Crea un recurso visual que presente ejercicios o preguntas sobre políticas ambientales. 
+Puede ser un diagrama, tabla o esquema visual que muestre niveles de dificultad o 
+relaciones entre conceptos, para que los estudiantes puedan interactuar mentalmente 
+con él. Format: Imagen clara y atractiva, lista para estudio o presentación. Tone: 
+Didáctico, motivador y claro para estudiantes universitarios.
